@@ -1,5 +1,6 @@
 package com.edutech.progressive.entity;
 
+<<<<<<< HEAD
 public class Doctor implements Comparable<Doctor> {
     private int DoctorId;
     private String FullName;
@@ -82,3 +83,8 @@ public class Doctor implements Comparable<Doctor> {
         return Integer.compare(this.DoctorId, o == null ? Integer.MAX_VALUE : o.DoctorId);
     }
 }
+=======
+public class Doctor {
+
+}
+>>>>>>> 14b2fe69e8cff2c8d596699d41db370bea2e10f5

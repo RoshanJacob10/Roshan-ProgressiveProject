@@ -1,5 +1,6 @@
 package com.edutech.progressive.service.impl;
 
+<<<<<<< HEAD
 import com.edutech.progressive.entity.Patient;
 import com.edutech.progressive.service.PatientService;
 
@@ -49,3 +50,8 @@ public class PatientServiceImplArraylist implements PatientService {
         patientList.clear();
     }
 }
+=======
+public class PatientServiceImplArraylist  {
+
+}
+>>>>>>> 14b2fe69e8cff2c8d596699d41db370bea2e10f5

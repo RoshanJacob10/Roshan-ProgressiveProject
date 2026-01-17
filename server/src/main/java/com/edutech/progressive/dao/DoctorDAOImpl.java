@@ -1,5 +1,6 @@
 package com.edutech.progressive.dao;
 
+<<<<<<< HEAD
 import com.edutech.progressive.config.DatabaseConnectionManager;
 import com.edutech.progressive.entity.Doctor;
 
@@ -96,3 +97,11 @@ public class DoctorDAOImpl implements DoctorDAO {
     }
 }
 
+=======
+
+public class DoctorDAOImpl {
+
+
+
+}
+>>>>>>> 14b2fe69e8cff2c8d596699d41db370bea2e10f5

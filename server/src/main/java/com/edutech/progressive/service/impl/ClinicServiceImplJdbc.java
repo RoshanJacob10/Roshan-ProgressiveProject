@@ -1,5 +1,6 @@
 package com.edutech.progressive.service.impl;
 
+<<<<<<< HEAD
 import com.edutech.progressive.dao.ClinicDAO;
 import com.edutech.progressive.entity.Clinic;
 import com.edutech.progressive.service.ClinicService;
@@ -58,3 +59,8 @@ public class ClinicServiceImplJdbc implements ClinicService {
         }
     }
 }
+=======
+public class ClinicServiceImplJdbc  {
+
+}
+>>>>>>> 14b2fe69e8cff2c8d596699d41db370bea2e10f5

@@ -1,5 +1,6 @@
 package com.edutech.progressive.dao;
 
+<<<<<<< HEAD
 import com.edutech.progressive.config.DatabaseConnectionManager;
 import com.edutech.progressive.entity.Clinic;
 
@@ -96,3 +97,8 @@ public class ClinicDAOImpl implements ClinicDAO {
     }
 }
 
+=======
+public class ClinicDAOImpl {
+
+}
+>>>>>>> 14b2fe69e8cff2c8d596699d41db370bea2e10f5

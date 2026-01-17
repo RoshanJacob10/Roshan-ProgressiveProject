@@ -1,5 +1,6 @@
 package com.edutech.progressive.dao;
 
+<<<<<<< HEAD
 import com.edutech.progressive.config.DatabaseConnectionManager;
 import com.edutech.progressive.entity.Patient;
 
@@ -101,4 +102,8 @@ public class PatientDAOImpl implements PatientDAO {
         }
         return list;
     }
+=======
+public class PatientDAOImpl {
+
+>>>>>>> 14b2fe69e8cff2c8d596699d41db370bea2e10f5
 }

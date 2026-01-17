@@ -1,5 +1,6 @@
 package com.edutech.progressive.service.impl;
 
+<<<<<<< HEAD
 import com.edutech.progressive.dao.PatientDAO;
 import com.edutech.progressive.entity.Patient;
 import com.edutech.progressive.service.PatientService;
@@ -70,3 +71,8 @@ public class PatientServiceImplJdbc implements PatientService {
     public void emptyArrayList() {
     }
 }
+=======
+public class PatientServiceImplJdbc  {
+
+}
+>>>>>>> 14b2fe69e8cff2c8d596699d41db370bea2e10f5

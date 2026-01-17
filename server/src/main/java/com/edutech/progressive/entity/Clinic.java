@@ -1,6 +1,7 @@
 package com.edutech.progressive.entity;
 
 public class Clinic {
+<<<<<<< HEAD
     private int ClinicId;
     private String ClinicName;
     private String Location;
@@ -68,3 +69,7 @@ public class Clinic {
         EstablishedYear = establishedYear;
     }
 }
+=======
+
+}
+>>>>>>> 14b2fe69e8cff2c8d596699d41db370bea2e10f5

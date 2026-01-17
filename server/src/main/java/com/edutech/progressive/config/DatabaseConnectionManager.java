@@ -1,5 +1,6 @@
 package com.edutech.progressive.config;
 
+<<<<<<< HEAD
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -37,4 +38,8 @@ public final class DatabaseConnectionManager {
         String password = PROPERTIES.getProperty("db.password");
         return DriverManager.getConnection(url, username, password);
     }
+=======
+public class DatabaseConnectionManager {
+
+>>>>>>> 14b2fe69e8cff2c8d596699d41db370bea2e10f5
 }
