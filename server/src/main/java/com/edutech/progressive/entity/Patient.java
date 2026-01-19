@@ -2,19 +2,44 @@ package com.edutech.progressive.entity;
 
 import java.util.Date;
 
-public class Patient implements Comparable<Patient>{
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity
+@Table(name = "patient")
+public class Patient implements Comparable<Patient> {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "patient_id")
     private int patientId;
+
+    @Column(name = "full_name", nullable = false)
     private String fullName;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "date_of_birth")
     private Date dateOfBirth;
+
+    @Column(name = "contact_number", length = 15)
     private String contactNumber;
+
+    @Column(name = "email", nullable = false, length = 100)
     private String email;
+
+    @Column(name = "address")
     private String address;
 
     public Patient() {
     }
-    
-    public Patient(int patientId, String fullName, Date dateOfBirth, String contactNumber, String email,
-            String address) {
+
+    public Patient(int patientId, String fullName, Date dateOfBirth, String contactNumber, String email, String address) {
         this.patientId = patientId;
         this.fullName = fullName;
         this.dateOfBirth = dateOfBirth;
@@ -22,49 +47,63 @@ public class Patient implements Comparable<Patient>{
         this.email = email;
         this.address = address;
     }
+
     public int getPatientId() {
         return patientId;
     }
+
     public void setPatientId(int patientId) {
         this.patientId = patientId;
     }
+
     public String getFullName() {
         return fullName;
     }
+
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
+
     public Date getDateOfBirth() {
         return dateOfBirth;
     }
+
     public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
+
     public String getContactNumber() {
         return contactNumber;
     }
+
     public void setContactNumber(String contactNumber) {
         this.contactNumber = contactNumber;
     }
+
     public String getEmail() {
         return email;
     }
+
     public void setEmail(String email) {
         this.email = email;
     }
+
     public String getAddress() {
         return address;
     }
+
     public void setAddress(String address) {
         this.address = address;
     }
+
     @Override
     public int compareTo(Patient o) {
-        return this.fullName.compareTo(o.fullName);
+        return this.fullName.compareToIgnoreCase(o.fullName);
     }
+
     @Override
     public String toString() {
         return "Patient [patientId=" + patientId + ", fullName=" + fullName + ", dateOfBirth=" + dateOfBirth
                 + ", contactNumber=" + contactNumber + ", email=" + email + ", address=" + address + "]";
-    }    
+    }
 }
