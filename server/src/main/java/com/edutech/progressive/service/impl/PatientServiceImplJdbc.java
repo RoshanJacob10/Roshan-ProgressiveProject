@@ -1,16 +1,14 @@
 package com.edutech.progressive.service.impl;
 
-<<<<<<< HEAD
-import com.edutech.progressive.dao.PatientDAO;
-import com.edutech.progressive.entity.Patient;
-import com.edutech.progressive.service.PatientService;
-
-import java.sql.SQLException;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class PatientServiceImplJdbc implements PatientService {
+import com.edutech.progressive.dao.PatientDAO;
+import com.edutech.progressive.entity.Patient;
+import com.edutech.progressive.service.PatientService;
+
+public class PatientServiceImplJdbc implements PatientService{
     private final PatientDAO patientDAO;
 
     public PatientServiceImplJdbc(PatientDAO patientDAO) {
@@ -18,61 +16,64 @@ public class PatientServiceImplJdbc implements PatientService {
     }
 
     @Override
-    public List<Patient> getAllPatients() {
+    public List<Patient> getAllPatients() throws Exception {
         try {
             return patientDAO.getAllPatients();
-        } catch (SQLException e) {
-            return Collections.emptyList();
-        }
+        } catch (Exception e) {
+            throw e;
+            // TODO: handle exception
+        }finally{}
+        
     }
 
     @Override
-    public Integer addPatient(Patient patient) {
+    public Integer addPatient(Patient patient) throws Exception {
         try {
             return patientDAO.addPatient(patient);
-        } catch (SQLException e) {
-            return -1;
-        }
+        } catch (Exception e) {
+            throw e;
+            // TODO: handle exception
+        }finally{}
     }
 
     @Override
-    public List<Patient> getAllPatientSortedByName() {
-        List<Patient> list = getAllPatients();
-        list.sort(Comparator.comparing(Patient::getFullName, String.CASE_INSENSITIVE_ORDER));
-        return list;
+    public List<Patient> getAllPatientSortedByName() throws Exception {
+        try {
+            List<Patient> sortPatients = patientDAO.getAllPatients();
+            Collections.sort(sortPatients, Comparator.comparing(Patient::getFullName));
+            return sortPatients;
+        } catch (Exception e) {
+            throw e;
+            // TODO: handle exception
+        }finally{}
     }
 
-    @Override
-    public void updatePatient(Patient patient) {
+    public void updatePatient(Patient patient) throws Exception{
         try {
             patientDAO.updatePatient(patient);
-        } catch (SQLException e) {
-        }
+        } catch (Exception e) {
+            throw e;
+            // TODO: handle exception
+        }finally{}
     }
 
-    @Override
-    public void deletePatient(int patientId) {
+    public void deletePatient(int patientId) throws Exception{
         try {
             patientDAO.deletePatient(patientId);
-        } catch (SQLException e) {
-        }
+        } catch (Exception e) {
+            throw e;
+            // TODO: handle exception
+        }finally{}
     }
-
-    @Override
-    public Patient getPatientById(int patientId) {
+    
+    public Patient getPatientById(int patientId) throws Exception{
         try {
             return patientDAO.getPatientById(patientId);
-        } catch (SQLException e) {
-            return null;
-        }
+        } catch (Exception e) {
+            throw e;
+            // TODO: handle exception
+        }finally{}
     }
-
-    @Override
-    public void emptyArrayList() {
-    }
+    
 }
-=======
-public class PatientServiceImplJdbc  {
 
-}
->>>>>>> 14b2fe69e8cff2c8d596699d41db370bea2e10f5

@@ -1,74 +1,84 @@
 package com.edutech.progressive.service.impl;
 
-<<<<<<< HEAD
-import com.edutech.progressive.dao.DoctorDAO;
-import com.edutech.progressive.entity.Doctor;
-import com.edutech.progressive.service.DoctorService;
-
-import java.sql.SQLException;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import com.edutech.progressive.dao.DoctorDAO;
+import com.edutech.progressive.entity.Doctor;
+import com.edutech.progressive.service.DoctorService;
+
 public class DoctorServiceImplJdbc implements DoctorService {
     private final DoctorDAO doctorDAO;
-
     public DoctorServiceImplJdbc(DoctorDAO doctorDAO) {
         this.doctorDAO = doctorDAO;
     }
 
     @Override
-    public List<Doctor> getAllDoctors() {
+    public List<Doctor> getAllDoctors() throws Exception {
         try {
             return doctorDAO.getAllDoctors();
-        } catch (SQLException e) {
-            return Collections.emptyList();
-        }
+        } catch (Exception e) {
+            throw e;
+            // TODO: handle exception
+        }finally{}
+        
     }
 
     @Override
-    public Doctor getDoctorById(int doctorId) {
-        try {
-            return doctorDAO.getDoctorById(doctorId);
-        } catch (SQLException e) {
-            return null;
-        }
-    }
-
-    @Override
-    public Integer addDoctor(Doctor doctor) {
+    public Integer addDoctor(Doctor doctor) throws Exception {
         try {
             return doctorDAO.addDoctor(doctor);
-        } catch (SQLException e) {
-            return -1;
-        }
+        } catch (Exception e) {
+            throw e;
+            // TODO: handle exception
+        }finally{}
+        
     }
 
     @Override
-    public List<Doctor> getDoctorSortedByExperience() {
-        List<Doctor> list = getAllDoctors();
-        list.sort(Comparator.comparingInt(Doctor::getYearsOfExperience).reversed());
-        return list;
+    public List<Doctor> getDoctorSortedByExperience() throws Exception {
+        try {
+            List<Doctor> sortedList = doctorDAO.getAllDoctors();
+            Collections.sort(sortedList, Comparator.comparingInt(Doctor::getYearsOfExperience));
+            return sortedList;
+        } catch (Exception e) {
+            throw e;
+            // TODO: handle exception
+        }finally{}
+        
     }
 
     @Override
-    public void updateDoctor(Doctor doctor) {
+    public Doctor getDoctorById(int doctorId) throws Exception{
+        try {
+            return doctorDAO.getDoctorById(doctorId);
+        } catch (Exception e) {
+            throw e;
+            // TODO: handle exception
+        }finally{}
+        
+    }
+
+    @Override
+    public void updateDoctor(Doctor doctor) throws Exception {
         try {
             doctorDAO.updateDoctor(doctor);
-        } catch (SQLException e) {
-        }
-    }
+        } catch (Exception e) {
+            throw e;
+            // TODO: handle exception
+        }finally{}
 
+    }
+    
     @Override
-    public void deleteDoctor(int doctorId) {
+    public void deleteDoctor(int doctorId) throws Exception{
         try {
             doctorDAO.deleteDoctor(doctorId);
-        } catch (SQLException e) {
-        }
+        } catch (Exception e) {
+            throw e;
+            // TODO: handle exception
+        }finally{}
     }
-}
-=======
-public class DoctorServiceImplJdbc  {
 
 }
->>>>>>> 14b2fe69e8cff2c8d596699d41db370bea2e10f5

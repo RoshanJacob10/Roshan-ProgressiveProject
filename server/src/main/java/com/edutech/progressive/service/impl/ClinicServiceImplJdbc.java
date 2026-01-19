@@ -1,15 +1,12 @@
 package com.edutech.progressive.service.impl;
 
-<<<<<<< HEAD
+import java.util.List;
+
 import com.edutech.progressive.dao.ClinicDAO;
 import com.edutech.progressive.entity.Clinic;
 import com.edutech.progressive.service.ClinicService;
 
-import java.sql.SQLException;
-import java.util.Collections;
-import java.util.List;
-
-public class ClinicServiceImplJdbc implements ClinicService {
+public class ClinicServiceImplJdbc implements ClinicService{
     private final ClinicDAO clinicDAO;
 
     public ClinicServiceImplJdbc(ClinicDAO clinicDAO) {
@@ -17,50 +14,58 @@ public class ClinicServiceImplJdbc implements ClinicService {
     }
 
     @Override
-    public List<Clinic> getAllClinics() {
+    public List<Clinic> getAllClinics() throws Exception{
         try {
             return clinicDAO.getAllClinics();
-        } catch (SQLException e) {
-            return Collections.emptyList();
-        }
+        } catch (Exception e) {
+            // TODO: handle exception
+            throw new Exception("Error fetching all clinics", e);
+        }finally{}
     }
 
     @Override
-    public Clinic getClinicById(int clinicId) {
+    public Clinic getClinicById(int clinicId) throws Exception{
         try {
-            return clinicDAO.getClinicById(clinicId);
-        } catch (SQLException e) {
-            return null;
-        }
+            Clinic clinic = clinicDAO.getClinicById(clinicId);
+            return clinic;
+        } catch (Exception e) {
+            // TODO: handle exception
+            throw new Exception("Error fetching clinic with id " + clinicId, e);
+        }finally{}
+        
     }
 
     @Override
-    public Integer addClinic(Clinic clinic) {
+    public Integer addClinic(Clinic clinic) throws Exception{
         try {
             return clinicDAO.addClinic(clinic);
-        } catch (SQLException e) {
-            return -1;
-        }
+        } catch (Exception e) {
+            // TODO: handle exception
+            throw new Exception("Error adding clinic: " + clinic.getClinicName(), e);
+        }finally{}
+        
     }
 
     @Override
-    public void updateClinic(Clinic clinic) {
+    public void updateClinic(Clinic clinic) throws Exception{
         try {
             clinicDAO.updateClinic(clinic);
-        } catch (SQLException e) {
-        }
+        } catch (Exception e) {
+            // TODO: handle exception
+            throw new Exception("Error updating clinic with ID " + clinic.getClinicId(), e);
+        }finally{}
+        
     }
 
     @Override
-    public void deleteClinic(int clinicId) {
+    public void deleteClinic(int clinicId) throws Exception{
         try {
             clinicDAO.deleteClinic(clinicId);
-        } catch (SQLException e) {
-        }
+        } catch (Exception e) {
+            // TODO: handle exception
+            throw new Exception("Error deleting clinic with ID " + clinicId, e);
+        }finally{}
+        
     }
+    
 }
-=======
-public class ClinicServiceImplJdbc  {
-
-}
->>>>>>> 14b2fe69e8cff2c8d596699d41db370bea2e10f5

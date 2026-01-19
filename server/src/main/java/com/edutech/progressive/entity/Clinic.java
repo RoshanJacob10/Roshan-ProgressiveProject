@@ -1,75 +1,71 @@
 package com.edutech.progressive.entity;
 
 public class Clinic {
-<<<<<<< HEAD
-    private int ClinicId;
-    private String ClinicName;
-    private String Location;
-    private int DoctorId;
-    private String ContactNumber;
-    private int EstablishedYear;
+    private int clinicId;
+    private String clinicName;
+    private String location;
+    private int doctorId;
+    private String contactNumber;
+    private int establishedYear;
 
-    public Clinic() {
+    public Clinic(){
+
     }
 
-    public Clinic(int clinicId, String clinicName, String location, int doctorId, String contactNumber, int establishedYear) {
-        this.ClinicId = clinicId;
-        this.ClinicName = clinicName;
-        this.Location = location;
-        this.DoctorId = doctorId;
-        this.ContactNumber = contactNumber;
-        this.EstablishedYear = establishedYear;
+    public Clinic(int clinicId, String clinicName, String location, int doctorId, String contactNumber, int establishedYear){
+        this.clinicId = clinicId;
+        this.clinicName = clinicName;
+        this.location = location;
+        this.doctorId = doctorId;
+        this.contactNumber = contactNumber;
+        this.establishedYear = establishedYear;
     }
 
     public int getClinicId() {
-        return ClinicId;
+        return clinicId;
     }
 
     public void setClinicId(int clinicId) {
-        ClinicId = clinicId;
+        this.clinicId = clinicId;
     }
 
     public String getClinicName() {
-        return ClinicName;
+        return clinicName;
     }
 
     public void setClinicName(String clinicName) {
-        ClinicName = clinicName;
+        this.clinicName = clinicName;
     }
 
     public String getLocation() {
-        return Location;
+        return location;
     }
 
     public void setLocation(String location) {
-        Location = location;
+        this.location = location;
     }
 
     public int getDoctorId() {
-        return DoctorId;
+        return doctorId;
     }
 
     public void setDoctorId(int doctorId) {
-        DoctorId = doctorId;
+        this.doctorId = doctorId;
     }
 
     public String getContactNumber() {
-        return ContactNumber;
+        return contactNumber;
     }
 
     public void setContactNumber(String contactNumber) {
-        ContactNumber = contactNumber;
+        this.contactNumber = contactNumber;
     }
 
     public int getEstablishedYear() {
-        return EstablishedYear;
+        return establishedYear;
     }
 
     public void setEstablishedYear(int establishedYear) {
-        EstablishedYear = establishedYear;
+        this.establishedYear = establishedYear;
     }
 }
-=======
-
-}
->>>>>>> 14b2fe69e8cff2c8d596699d41db370bea2e10f5
