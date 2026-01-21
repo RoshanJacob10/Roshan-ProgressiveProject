@@ -1,29 +1,67 @@
 package com.edutech.progressive.service.impl;
 
-import com.edutech.progressive.entity.Patient;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.edutech.progressive.entity.Patient;
+import com.edutech.progressive.repository.PatientRepository;
+import com.edutech.progressive.service.PatientService;
 
 @Service
-public class PatientServiceImplJpa {
+public class PatientServiceImplJpa implements PatientService {
 
+    private PatientRepository patientRepository;
+
+    @Autowired
+    public PatientServiceImplJpa(PatientRepository patientRepository) {
+        this.patientRepository = patientRepository;
+    }
+
+    @Override
     public List<Patient> getAllPatients() throws Exception {
-        return new ArrayList<>();
+        return patientRepository.findAll();
     }
 
-    public Patient getPatientById(int patientId) throws Exception {
-        return null;
-    }
-
+    @Override
     public Integer addPatient(Patient patient) throws Exception {
-        return -1;
+        return patientRepository.save(patient).getPatientId();
+    }
+
+    @Override
+    public List<Patient> getAllPatientSortedByName() throws Exception {
+        List<Patient> patientList = patientRepository.findAll();
+        patientList.sort(Comparator.comparing(Patient::getFullName));
+        return patientList;
     }
 
     public void updatePatient(Patient patient) throws Exception {
+        Patient patientObj = patientRepository.findById(patient.getPatientId()).get();
+        if (patientObj != null) {
+            patientObj.setFullName(patient.getFullName());
+            patientObj.setContactNumber(patient.getContactNumber());
+            patientObj.setDateOfBirth(patient.getDateOfBirth());
+            patientObj.setEmail(patient.getEmail());
+            patientObj.setAddress(patient.getEmail());
+
+            patientRepository.save(patientObj);
+        }
     }
 
     public void deletePatient(int patientId) throws Exception {
+        // if(patientRepository.existsById(patientId)){
+            patientRepository.deleteById(patientId);
+        // }
     }
+
+    public Patient getPatientById(int patientId) throws Exception {
+        return patientRepository.findByPatientId(patientId);
+    }
+
 }
+
+
