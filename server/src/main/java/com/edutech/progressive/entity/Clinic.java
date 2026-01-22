@@ -1,6 +1,5 @@
 package com.edutech.progressive.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,31 +9,21 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "clinic")
 public class Clinic {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "clinic_id")
+
     private int clinicId;
-
-    @Column(name = "clinic_name", nullable = false)
     private String clinicName;
-
-    @Column(name = "location", length = 100)
     private String location;
-
-    @Column(name = "doctor_id")
     private int doctorId;
-
-    @Column(name = "contact_number", length = 15)
     private String contactNumber;
-
-    @Column(name = "established_year")
     private int establishedYear;
 
-    public Clinic() {
+    public Clinic(){
+
     }
 
-    public Clinic(int clinicId, String clinicName, String location, int doctorId, String contactNumber, int establishedYear) {
+    public Clinic(int clinicId, String clinicName, String location, int doctorId, String contactNumber, int establishedYear){
         this.clinicId = clinicId;
         this.clinicName = clinicName;
         this.location = location;

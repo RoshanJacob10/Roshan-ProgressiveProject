@@ -12,5 +12,3 @@ public interface ClinicDAO {
     void deleteClinic(int clinicId) throws SQLException;
     List<Clinic> getAllClinics() throws SQLException;
 }
-
-

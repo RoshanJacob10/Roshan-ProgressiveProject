@@ -12,6 +12,3 @@ public interface PatientDAO {
     void deletePatient (int patientId) throws SQLException;
     List<Patient> getAllPatients() throws SQLException;
 }
-
-
-

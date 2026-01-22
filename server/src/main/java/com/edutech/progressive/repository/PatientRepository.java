@@ -10,4 +10,3 @@ public interface PatientRepository extends JpaRepository<Patient, Integer>{
 
     Patient findByPatientId(int patientId);
 }
-

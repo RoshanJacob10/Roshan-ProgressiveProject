@@ -63,5 +63,3 @@ public class PatientServiceImplJpa implements PatientService {
     }
 
 }
-
-

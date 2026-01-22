@@ -13,7 +13,3 @@ public interface DoctorDAO {
     List<Doctor> getAllDoctors() throws SQLException;
 }
 
-
-
-
-

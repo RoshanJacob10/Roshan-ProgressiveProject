@@ -7,4 +7,3 @@ import com.edutech.progressive.entity.Clinic;
 @Repository
 public interface ClinicRepository extends JpaRepository<Clinic, Integer> {
 }
-
